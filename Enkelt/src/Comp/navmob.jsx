@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function navmob() {
-    const[isOpen, setIsOpen] = useState(false)
+    const[isOpen, setIsOpen] = useState(true)
   return (<>
     {isOpen && (
         <div className='absolute h-[20rem] w-[10rem] bg-blue-400 text-4xl flex flex-col justify-around rounded-3xl top-20 right-1 text-center' >

@@ -22,7 +22,7 @@ function Home() {
 
     <footer className='col-start-1 col-end-13 row-start-8 row-end-13 flex flex-col text-center items-center mt-5 '>
 
-    <h3 className='text-3xl'>Kontakta oss</h3>
+    <h3 className='text-3xl mb-4'>Kontakta oss</h3>
     
     <input className='bg-gray-200 w-60 h-10 rounded-2xl mb-4 text-black p-3 ' type="text" placeholder='För o Efternamn'/>
     <input className='bg-gray-200 w-60 h-10 rounded-2xl mb-4 text-black p-3 ' type="email" placeholder='Email'/>
