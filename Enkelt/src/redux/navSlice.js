@@ -1,17 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from "@reduxjs/toolkit"
 
-const navSlice = createSlice({
-  name: 'nav',
-  initialState: { isOpen: false },
-  reducers: {
-    toggleNav: (state) => {
-      state.isOpen = !state.isOpen;
-    },
-    setNavState: (state, action) => {
-      state.isOpen = action.payload;
-    }
+const toggleSlice = createSlice({
+  name: "toggle",
+  initialState:{
+    value: false,
   },
-});
+  reducers:{
+    toggle: state => {
+      state.value = !state.value
+    }
+  }
+})
 
-export const { toggleNav, setNavState } = navSlice.actions;
-export default navSlice.reducer;
+
+export const {toggle} = toggleSlice.actions
+export default toggleSlice.reducer

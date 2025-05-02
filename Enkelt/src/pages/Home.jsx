@@ -1,12 +1,15 @@
 import React, { Children } from 'react'
 import Button from '../Comp/button'
+import { useDispatch } from 'react-redux'
+import { toggle } from '../redux/navSlice'
 
 function Home() {
+  const dispatch  = useDispatch()
   return (
     <section className='h-screen grid grid-cols-12 grid-rows-12'>
     <nav className='col-start-1 col-end-13 flex  w-screen h-[6rem] justify-between items-center'>
         <h2 className='text-5xl ml-5 text-blue-400' >EnkelT</h2>
-        <Button> <img className='h-8 w-8 mr-4' src="/menu.png" alt="stripe menu" /></Button>
+        <Button onclick={()=> dispatch(toggle())}> <img className='h-8 w-8 mr-4' src="/menu.png" alt="stripe menu" /></Button>
     </nav>
     <header className='col-start-1 col-end-13 row-start-2 row-end-4 grid grid-cols-12 grid-rows-12 mt-3'>
         <img className='col-start-5 col-end-10

@@ -1,13 +1,16 @@
 import React from 'react'
 import Button from '../Comp/button'
+import { toggle } from '../redux/navSlice'
+import { useDispatch } from 'react-redux'
 
 function Services() {
+  const dispatch = useDispatch()
   return (
     <section className= ' h-screen flex flex-col  text-center text-[1.5rem] text-blue-400 mx-3'  >
 
       <header className='flex justify-between'>
       <h2 className='text-4xl mb-4 mt-2.5 ml-20'>Våra Tjänster</h2>
-      <Button ><img className='h-7' src="menu.png" alt="menu btn" /></Button>
+      <Button onclick={()=> dispatch(toggle())} ><img className='h-7' src="menu.png" alt="menu btn" /></Button>
       </header>
       
 
