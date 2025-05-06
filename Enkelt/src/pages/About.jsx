@@ -1,25 +1,54 @@
-import React, { use } from 'react'
-import Button from '../Comp/button'
-import { toggle } from '../redux/navSlice'
-import { useDispatch } from 'react-redux'
+import React from 'react';
+import Button from '../Comp/button';
+import { toggle } from '../redux/navSlice';
+import { useDispatch } from 'react-redux';
 
 function About() {
-  const dispatch  = useDispatch()
+  const dispatch = useDispatch();
+  
   return (
-    <section className='bg-gradient-to-br from-blue-50 to-indigo-100 text-center'> 
-    <header className='flex justify-between mx-3 '>
-      <h3 className='text-5xl  text-blue-400 ml-28 my-5' > EneklT</h3>
-    <Button onclick={()=> dispatch(toggle())}><img className='h-8' src="menu.png" alt="" /></Button>
-    </header>
-      <p className='text-2xl leading-relaxed mx-2'>EneklT finns till för dig som tycker att teknik ibland känns krånglig. Vi vet att det inte alltid är lätt att hänga med när prylarna blir allt mer avancerade – därför hjälper vi dig på plats, hemma hos dig.
-Vi arbetar med personligt bemötande och tydliga förklaringar, utan tekniskt krångel. Oavsett om du behöver hjälp med att komma igång med en ny mobil, installera något i hemmet eller förstå hur saker fungerar, så är vårt mål att du ska känna dig trygg och nöjd.
-Bakom EneklT står Jesper Persson, med lång erfarenhet av teknik, kundservice och tålamod i mängder.
-Vi utgår från Kristinehamn och erbjuder hembesök inom 2,5 mils radie. Tjänsten riktar sig till privatpersoner som vill ha enkel, trygg och pålitlig teknikhjälp.</p>
-      <img className='h-40 rounded-full grayscale-100 justify-self-center my-4 ' src="me.jpg" alt="profile picture" />
-    
-    <p className='text-center mx-3 text-2xl'>Jesper Persson</p>
+    <section className='min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100'>
+      {/* Header */}
+      <header className='flex justify-between items-center p-6 max-w-7xl mx-auto'>
+        <h1 className='text-4xl md:text-5xl text-blue-400 font-bold'>EnkelT</h1>
+        <Button 
+          onclick={() => dispatch(toggle())}
+          aria-label="Toggle menu"
+          className="p-2"
+        >
+          <img className='h-8 w-8' src="/menu.png" alt="Menu icon" />
+        </Button>
+      </header>
+
+      {/* Main Content */}
+      <main className='max-w-4xl mx-auto px-6 py-8 space-y-8'>
+        <article className='prose prose-lg mx-auto'>
+          <p className='text-xl md:text-2xl leading-relaxed text-gray-800'>
+            EnkelT finns till för dig som tycker att teknik ibland känns krånglig. Vi vet att det inte alltid är lätt att hänga med när prylarna blir allt mer avancerade – därför hjälper vi dig på plats, hemma hos dig.
+          </p>
+          <p className='text-xl md:text-2xl leading-relaxed text-gray-800'>
+            Vi arbetar med personligt bemötande och tydliga förklaringar, utan tekniskt krångel. Oavsett om du behöver hjälp med att komma igång med en ny mobil, installera något i hemmet eller förstå hur saker fungerar, så är vårt mål att du ska känna dig trygg och nöjd.
+          </p>
+          <p className='text-xl md:text-2xl leading-relaxed text-gray-800'>
+            Bakom EnkelT står Jesper Persson, med lång erfarenhet av teknik, kundservice och tålamod i mängder.
+          </p>
+          <p className='text-xl md:text-2xl leading-relaxed text-gray-800'>
+            Vi utgår från Kristinehamn och erbjuder hembesök inom 2,5 mils radie. Tjänsten riktar sig till privatpersoner som vill ha enkel, trygg och pålitlig teknikhjälp.
+          </p>
+        </article>
+
+        {/* Profile Section */}
+        <div className='flex flex-col items-center space-y-4'>
+          <img 
+            className='h-48 w-48 rounded-full object-cover border-4 border-white shadow-lg'
+            src="/me.jpg" 
+            alt="Jesper Persson, grundare av EnkelT" 
+          />
+          <h2 className='text-3xl font-medium text-gray-800'>Jesper Persson</h2>
+        </div>
+      </main>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;

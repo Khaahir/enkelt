@@ -1,49 +1,77 @@
-import React from 'react'
-import Button from '../Comp/button'
-import { toggle } from '../redux/navSlice'
-import { useDispatch } from 'react-redux'
+import React from 'react';
+import Button from '../Comp/button';
+import { toggle } from '../redux/navSlice';
+import { useDispatch } from 'react-redux';
 
 function Services() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
+  const services = [
+    {
+      icon: '📱',
+      title: 'Felsökning',
+      description: 'Vi lokaliserar och löser problem med datorer, mobiler, surfplattor, nätverk och annan teknik'
+    },
+    {
+      icon: '⚙️',
+      title: 'Installation & Uppstart',
+      description: 'Vi installerar och ställer in allt från skrivare och routrar till smarta telefoner och TV-apparater'
+    },
+    {
+      icon: '‍🏫',
+      title: 'Teknisk rådgivning',
+      description: 'Vi förklarar tekniken på ett enkelt och begripligt sätt – utan krångligt språk'
+    },
+    {
+      icon: '🌐',
+      title: 'Wi-Fi & internetproblem',
+      description: 'Vi hjälper dig optimera ditt hemnätverk, felsöka uppkopplingsproblem och förbättra täckningen'
+    }
+  ];
+
   return (
-    <section className= ' h-screen flex flex-col  text-center text-[1.5rem] text-blue-400 mx-3'  >
-
-      <header className='flex justify-between'>
-      <h2 className='text-4xl mb-4 mt-2.5 ml-20'>Våra Tjänster</h2>
-      <Button onclick={()=> dispatch(toggle())} ><img className='h-7' src="menu.png" alt="menu btn" /></Button>
+    <section className='min-h-screen bg-blue-50 p-6'>
+      {/* Header */}
+      <header className='flex justify-between items-center mb-8 max-w-6xl mx-auto'>
+        <h1 className='text-3xl md:text-4xl font-bold text-blue-600'>Våra Tjänster</h1>
+        <Button 
+          onclick={() => dispatch(toggle())}
+          aria-label="Toggle menu"
+          className="p-2"
+        >
+          <img className='h-7 w-7' src="/menu.png" alt="Menu button" />
+        </Button>
       </header>
-      
 
-      <div className='mb-5'>
-      Vi hjälper dig när tekniken krånglar eller känns överväldigande. Oavsett om du behöver hjälp med felsökning, installation eller vill förstå dina prylar bättre – vi kommer till dig.
+      {/* Introduction */}
+      <div className='max-w-3xl mx-auto mb-12 text-lg md:text-xl text-gray-700 leading-relaxed'>
+        Vi hjälper dig när tekniken krånglar eller känns överväldigande. Oavsett om du behöver 
+        hjälp med felsökning, installation eller vill förstå dina prylar bättre – vi kommer till dig.
       </div>
 
-     <h3 className='mb-3'>📱 Felsökning</h3>
+      {/* Services List */}
+      <div className='max-w-4xl mx-auto space-y-8 mb-12'>
+        {services.map((service, index) => (
+          <div key={index} className='bg-white p-6 rounded-xl shadow-md'>
+            <h2 className='text-2xl font-semibold text-blue-600 mb-3'>
+              {service.icon} {service.title}
+            </h2>
+            <p className='text-lg text-gray-700'>{service.description}</p>
+          </div>
+        ))}
+      </div>
 
-     <div className='mb-3.5'>
-     Vi lokaliserar och löser problem med datorer, mobiler, surfplattor, nätverk och annan teknik
-     </div>
-
-     <h3 className='mb-3'>
-     ⚙️ Installation & Uppstart
-     </h3>
-
-    <div className='mb-3'>Vi installerar och ställer in allt från skrivare och routrar till smarta telefoner och TV-apparater</div>
-
-    <h3 className='mb-3'>‍🏫 Teknisk rådgivning</h3>
-
-    <div className='mb-3'>Vi förklarar tekniken på ett enkelt och begripligt sätt – utan krångligt språk.</div>
-
-    <h3 className='mb-3'>🌐 Wi-Fi & internetproblem</h3>
-
-    <div className='mb-3'>Vi hjälper dig optimera ditt hemnätverk, felsöka uppkopplingsproblem och förbättra täckningen.</div>
-
-
-    <div className='mb-3'>Pris
-    💰 Startavgift: 300 kr inkl en timme  ⏱️ Timpris därefter: 200 kr/timme 📍 Vi erbjuder hembesök inom en radie på 2,5 mil runt Kristinehamn.</div>
-
+      {/* Pricing */}
+      <div className='max-w-3xl mx-auto bg-white p-6 rounded-xl shadow-md'>
+        <h2 className='text-2xl font-semibold text-blue-600 mb-4'>Priser</h2>
+        <ul className='space-y-3 text-lg text-gray-700'>
+          <li>💰 Startavgift: 300 kr (inkluderar första timmen)</li>
+          <li>⏱️ Timpris därefter: 200 kr/timme</li>
+          <li>📍 Vi erbjuder hembesök inom en radie på 2,5 mil runt Kristinehamn</li>
+        </ul>
+      </div>
     </section>
-  )
+  );
 }
 
-export default Services
+export default Services;
