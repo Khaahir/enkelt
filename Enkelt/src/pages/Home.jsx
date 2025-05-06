@@ -42,7 +42,7 @@ function Home() {
     <section className='min-h-screen grid grid-cols-12 grid-rows-[auto_auto_1fr_auto]'>
       <nav className='col-span-full flex justify-between items-center h-24 px-5 bg-white shadow-sm'>
         <h1 className='text-5xl text-blue-400'>EnkelT</h1>
-        <Button onClick={() => dispatch(toggle())} aria-label="Toggle menu">
+        <Button onclick={() => dispatch(toggle())} aria-label="Toggle menu">
           <img className='h-8 w-8' src="/menu.png" alt="Menu" />
         </Button>
       </nav>
