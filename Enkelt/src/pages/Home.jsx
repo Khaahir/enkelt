@@ -95,9 +95,14 @@ function Home() {
           <Button
             type="submit"
             classname="h-12 w-full bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-xl transition-colors"
+          
           >
             Skicka
           </Button>
+          <p className="text-sm text-gray-600 italic">
+  Ha tålamod efter att du klickat på "Skicka" – det kan ta upp till en minut innan det händer något eftersom servern är lite långsam just nu. Tack för ditt tålamod!
+</p>
+
         </form>
       </footer>
     </section>
