@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../Comp/button';
 import { toggle } from '../redux/navSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function About() {
   const dispatch = useDispatch();
@@ -9,8 +10,10 @@ function About() {
   return (
     <section className='min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100'>
       {/* Header */}
-      <header className='flex justify-between items-center p-6 max-w-7xl mx-auto'>
+      <header className='flex justify-between items-center p-6 max-w-7xl mx-auto ' >
+        <Link to={"/"}>
         <h1 className='text-4xl md:text-5xl text-blue-400 font-bold'>EnkelT</h1>
+        </Link>
         <Button 
           onclick={() => dispatch(toggle())}
           aria-label="Toggle menu"

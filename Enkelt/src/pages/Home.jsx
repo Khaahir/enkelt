@@ -41,7 +41,7 @@ function Home() {
   return (
     <section className='min-h-screen grid grid-cols-12 grid-rows-[auto_auto_1fr_auto]'>
       <nav className='col-span-full flex justify-between items-center h-24 px-5 bg-white shadow-sm'>
-        <h1 className='text-5xl text-blue-400'>EnkelT</h1>
+        <h1 className='text-4xl md:text-5xl text-blue-400 font-bold'>EnkelT</h1>
         <Button onclick={() => dispatch(toggle())} aria-label="Toggle menu">
           <img className='h-8 w-8' src="/menu.png" alt="Menu" />
         </Button>
@@ -100,7 +100,9 @@ function Home() {
             Skicka
           </Button>
           <p className="text-sm text-gray-600 italic">
-  Ha tålamod efter att du klickat på "Skicka" – det kan ta upp till en minut innan det händer något eftersom servern är lite långsam just nu. Tack för ditt tålamod!
+Ha tålamod efter att du har klickat på "Skicka" – det kan ta upp till en minut innan något händer eftersom servern är lite långsam just nu.
+Klicka inte flera gånger, och stäng inte sidan innan du har fått en bekräftelse – annars kanske meddelandet inte skickas alls eller skickas flera gånger.
+Tack för ditt tålamod!
 </p>
 
         </form>
