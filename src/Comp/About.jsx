@@ -9,7 +9,6 @@ function About() {
       {/* Header */}
       <header className='flex justify-between items-center p-6 max-w-7xl mx-auto ' >
         <Link to={"/"}>
-        <h1 className='text-4xl md:text-5xl text-blue-400 font-bold'>EnkelT</h1>
         </Link>
       </header>
 
